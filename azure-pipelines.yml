@@ -19,7 +19,7 @@ stages:
           vmImage: "windows-latest"
         container:
           image: uipathimageregistry.azurecr.io/uipathrobot:63
-          endpoint: AzureContainerRegistry
+          endpoint: uipathimageregistry
 
         steps:
           - script: C:\UiPath\UiRobot.exe -file $(Build.SourcesDirectory)\Main.xaml
