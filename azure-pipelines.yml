@@ -1,0 +1,27 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  - master
+variables:
+  - group: uipath-cicd
+  - name: agent.preferPowerShellOnContainers
+    value: "True"
+
+stages:
+  - stage: Run
+    displayName: Crate and Run the bot
+    jobs:
+      - job: RunBot
+        pool:
+          vmImage: "windows-latest"
+        container:
+          image: uipathimageregistry.azurecr.io/uipathrobot:63
+          endpoint: AzureContainerRegistry
+
+        steps:
+          - script: C:\UiPath\UiRobot.exe -file $(Build.SourcesDirectory)\Main.xaml
+            displayName: "Run the xaml file"
+
