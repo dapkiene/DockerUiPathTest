@@ -1,0 +1,38 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  - master
+variables:
+  - name: agent.preferPowerShellOnContainers
+    value: "True"
+
+stages:
+  - stage: Run
+    displayName: Crate and Run the bot
+    jobs:
+      - job: RunBot
+        pool:
+          vmImage: "windows-latest"
+        container:
+          image: uipathimageregistry.azurecr.io/uipathrobot:latest
+          endpoint: uipathimageregistry
+
+        steps:
+          - checkout: self  # self represents the repo where the initial Pipelines YAML file was found
+            clean: true  # whether to fetch clean each time
+            fetchDepth: 1  # the depth of commits to ask Git to fetch
+            lfs: false  # whether to download Git-LFS files
+            submodules: true | recursive  # set to 'true' for a single level of submodules or 'recursive' to get submodules of submodules
+            path: AzureDevOpsScripts # path to check out source code, relative to the agent's build directory (e.g. \_work\1)
+            persistCredentials: true  # set to 'true' to leave the OAuth token in the Git config after the initial fetch
+          - script: dir D:\
+          - script: dir D:\a\
+          - script: dir D:\a\1\s
+          - script: dir C:\
+          - script: dir C:\UiPath
+          #- script: C:\UiPath\UiRobot.exe -file D:\a\1\AzureDevOpsScripts\Main.xaml
+          #  displayName: "Run the xaml file"
+
