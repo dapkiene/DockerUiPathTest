@@ -17,7 +17,7 @@ stages:
         pool:
           vmImage: "windows-latest"
         container:
-          image: uipathimageregistry.azurecr.io/uipathrobot:63
+          image: uipathimageregistry.azurecr.io/uipathrobot:latest
           endpoint: uipathimageregistry
 
         steps:
