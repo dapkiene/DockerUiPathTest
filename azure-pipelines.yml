@@ -30,7 +30,7 @@ stages:
             persistCredentials: true  # set to 'true' to leave the OAuth token in the Git config after the initial fetch
           - script: dir D:\
           - script: dir D:\a\
-          - script: dir D:\a\1
+          - script: dir D:\a\1\s
           - script: dir C:\
           - script: dir C:\UiPath
           #- script: C:\UiPath\UiRobot.exe -file D:\a\1\AzureDevOpsScripts\Main.xaml
