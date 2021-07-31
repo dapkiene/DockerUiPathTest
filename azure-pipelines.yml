@@ -28,8 +28,8 @@ stages:
             submodules: true | recursive  # set to 'true' for a single level of submodules or 'recursive' to get submodules of submodules
             path: AzureDevOpsScripts # path to check out source code, relative to the agent's build directory (e.g. \_work\1)
             persistCredentials: true  # set to 'true' to leave the OAuth token in the Git config after the initial fetch
-          - script: dir D:\
-          - script: dir D:\a\
+          - script: dir
+          #- script: dir D:\a\
           - script: dir D:\a\1\s
           - script: dir C:\
           - script: dir C:\UiPath
