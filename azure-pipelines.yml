@@ -29,9 +29,7 @@ stages:
             path: AzureDevOpsScripts # path to check out source code, relative to the agent's build directory (e.g. \_work\1)
             persistCredentials: true  # set to 'true' to leave the OAuth token in the Git config after the initial fetch
           - script: dir
-          #- script: dir D:\a\
-          - script: dir D:\a\1\s
-          - script: dir C:\
+          - script: dir $(Pipeline.Workspace)
           - script: dir C:\UiPath
           #- script: C:\UiPath\UiRobot.exe -file D:\a\1\AzureDevOpsScripts\Main.xaml
           #  displayName: "Run the xaml file"
