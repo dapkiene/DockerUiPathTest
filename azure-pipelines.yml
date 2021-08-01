@@ -21,6 +21,7 @@ stages:
           endpoint: uipathimageregistry
 
         steps:
+          - script: dir
           - checkout: self  # self represents the repo where the initial Pipelines YAML file was found
             clean: true  # whether to fetch clean each time
             fetchDepth: 1  # the depth of commits to ask Git to fetch
@@ -30,7 +31,7 @@ stages:
             persistCredentials: true  # set to 'true' to leave the OAuth token in the Git config after the initial fetch
           - script: dir
           - script: dir $(Pipeline.Workspace)\AzureDevOpsScripts
-          - script: dir C:\UiPath
+          # - script: dir C:\UiPath
           - script: C:\UiPath\UiRobot.exe -file $(Pipeline.Workspace)\AzureDevOpsScripts\Main.xaml
             displayName: "Run the xaml file"
 
