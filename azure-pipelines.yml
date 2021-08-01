@@ -31,7 +31,8 @@ stages:
             persistCredentials: true  # set to 'true' to leave the OAuth token in the Git config after the initial fetch
           - script: dir
           - script: dir $(Pipeline.Workspace)\AzureDevOpsScripts
-          # - script: dir C:\UiPath
-          - script: C:\UiPath\UiRobot.exe -file $(Pipeline.Workspace)\AzureDevOpsScripts\Main.xaml
+          - script: dir C:\
+          - script: dir "C:\Program Files\WindowsPowerShell"
+          - script: UiRobot.exe -file $(Pipeline.Workspace)\AzureDevOpsScripts\Main.xaml
             displayName: "Run the xaml file"
 
