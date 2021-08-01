@@ -32,8 +32,8 @@ stages:
           # - script: dir
           # - script: dir $(Pipeline.Workspace)\AzureDevOpsScripts
           # - script: dir C:\
-          - script: C:\"Program Files (x86)"\UiPath\Studio\UiPath\Regutil.exe get-info
+          # - script: C:\"Program Files (x86)"\UiPath\Studio\UiPath\Regutil.exe get-info
           #- script: dir "C:\Program Files\WindowsPowerShell"
-          # - script: C:\UiPath\UiRobot.exe -file $(Pipeline.Workspace)\AzureDevOpsScripts\Main.xaml
+          - script: C:\UiPath\UiRobot.exe -file $(Pipeline.Workspace)\AzureDevOpsScripts\Main.xaml
           #   displayName: "Run the xaml file"
 
