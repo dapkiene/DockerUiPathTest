@@ -32,7 +32,8 @@ stages:
           - script: dir
           - script: dir $(Pipeline.Workspace)\AzureDevOpsScripts
           - script: dir C:\
-          - script: dir "C:\Program Files\WindowsPowerShell"
+          - script: dir C:\UiPath
+          #- script: dir "C:\Program Files\WindowsPowerShell"
           - script: UiRobot.exe -file $(Pipeline.Workspace)\AzureDevOpsScripts\Main.xaml
             displayName: "Run the xaml file"
 
