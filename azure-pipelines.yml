@@ -21,6 +21,13 @@ stages:
           endpoint: uipathimageregistry
 
         steps:
+          - script: dir
+          - script: dir C:\image
+          - script: dir C:\Program Files
+          - script: dir C:\Users
+          - script: dir C:\Temp
+          - script: dir C:\Packages
+          - script: dir C:\data
           - checkout: self  # self represents the repo where the initial Pipelines YAML file was found
             clean: true  # whether to fetch clean each time
             fetchDepth: 1  # the depth of commits to ask Git to fetch
